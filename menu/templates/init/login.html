@@ -1,0 +1,18 @@
+{% if user.is_authenticated %}
+    Welcome {{ user.username }}    
+{% else %}
+<div class="navbar-collapse collapse">
+    <form action="{% url 'index' %}" class="navbar-form navbar-right" role="form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Correo electrónico" class="form-control" required autofocus>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Iniciar Sesion</button>
+
+    </form>
+
+</div><!--/.navbar-collapse -->
+{% endif %}

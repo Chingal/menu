@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%block title%}INICIO{%endblock%}
+{%block h1%}
+<h1>INICIO</h1>
+{%endblock%}
+
+{% block content %}
+	{% if user.is_authenticated %}
+	<h2>Bienvenido {{user.username}} </h2>
+        {% for m in menu %}
+                            <p>{{ m.name }}</p>
+                            <p>{{ m.url }}</p>
+                        {% endfor %}
+	{% endif %}
+{%endblock%}

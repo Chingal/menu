@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{%block title%}Lista de Menu{%endblock%}
+{%block h1%}
+<h1>Lista</h1>
+{%endblock%}
+
+{% block content %}
+	{% if opciones %}
+        {% for opc in opciones %}
+            {{ opc.titulo }}
+        {% endfor %}
+    {% else %}
+        No hay opciones.
+    {%endif%}
+{%endblock%}
